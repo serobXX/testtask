@@ -47,7 +47,6 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <nav className="bg-white px-4 pt-2 pb-4 space-y-4">
-            <h2 className="text-2xl text-purple-500 font-semibold mb-4">Наши услуги</h2>
             <div className="space-y-4">
               <a href="#" className="block text-gray-600 hover:text-gray-900">О школе</a>
               <a href="#" className="block text-gray-600 hover:text-gray-900">Курсы</a>

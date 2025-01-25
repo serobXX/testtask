@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { services } from "./data";
 import { ServiceCard } from "./ServiceCard";
 import { SlideNavigation } from "./SlideNavigation";
-import { cn } from "@/lib/utils";
 
 const SLIDES_PER_VIEW = {
   mobile: 1,

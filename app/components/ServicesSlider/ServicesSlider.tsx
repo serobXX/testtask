@@ -44,14 +44,9 @@ export function ServicesSlider() {
     );
   };
 
-  const totalSlides = Math.ceil(services.length / slidesPerView);
 
-  const handlePrevious = () => {
-    setCurrentSlide((prev) => Math.max(0, prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentSlide((prev) => Math.min(totalSlides - 1, prev + 1));
+  const handleDotClick = (index: number) => {
+    setCurrentSlide(index);
   };
 
   return (
@@ -60,22 +55,15 @@ export function ServicesSlider() {
         <div className="flex flex-col gap-6 mb-8">
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-primary text-lg">1.0</span>
-              <h2 className="text-3xl font-bold text-primary">Наши услуги</h2>
+              <h2 className="text-3xl text-[#A59DFF] font-bold text-primary">Наши услуги</h2>
             </div>
-            <button className="px-4 py-2 rounded-md bg-black text-white">
-              Меню
-            </button>
           </div>
           <SlideNavigation
+            onDotClick={handleDotClick}
             currentSlide={currentSlide}
-            totalSlides={totalSlides}
-            onPrevious={handlePrevious}
-            onNext={handleNext}
-            isMobile={isMobile}
-          />
+            isMobile={isMobile} />
         </div>
-        
+
         <div className="relative overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {getVisibleServices().map((service) => (
